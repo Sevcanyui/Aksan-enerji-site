@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İnsan Kaynakları - Aksa Enerji</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+      h2 {
+  transition: color 0.3s ease;
+}
+h2:hover {
+  color: #00aa00;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #242424;
+}
+
+.top-bar {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar .logo img {
+  height: 42px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #00336600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #292929;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.side-menu a:hover {
+  background-color: #00336600;
+}
+
+.side-menu a i {
+  margin-right: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.content {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+}
+
+.section-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.section-left .section-text {
+  text-align: left;
+}
+.section-right .section-text {
+  text-align: right;
+}
+
+.section-text h2 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.section-text p {
+  font-size: 16px;
+  color: #333;
+}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> MENÜ</div>
+    <div class="logo"><img src="https://aksaenerjicdn.mncdn.com/assets/images/aksa-enerji-logo.jpg" alt="Aksa Enerji"></div>
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="side-menu" id="sideMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+    <a href="hakkimizda.html"><i class="fas fa-circle-info"></i> Hakkımızda</a>
+    <a href="tedarikciler.html"><i class="fas fa-people-carry-box"></i> Tedarikçiler</a>
+    <a href="enerji-santralleri.html"><i class="fas fa-bolt"></i> Enerji Santralleri</a>
+    <a href="surdurulebilirlik.html"><i class="fas fa-leaf"></i> Sürdürülebilirlik</a>
+    <a href="yatirimci-iliskileri.html"><i class="fas fa-handshake"></i> Yatırımcı İlişkileri</a>
+    <a href="haberler.html"><i class="fas fa-newspaper"></i> Haberler</a>
+    <a href="insan-kaynaklari.html"><i class="fas fa-user"></i> İnsan Kaynakları</a>
+    <a href="iletisim.html"><i class="fas fa-envelope"></i> İletişim</a>
+</div>
+<div class="content">
+    <h1 style="color:#003366;">İnsan Kaynakları</h1>
+    <p>İnsan kaynağına değer veren Aksa Enerji, çalışanlarının gelişimi ve memnuniyeti için çalışır.</p>
+    <h2> İNSAN KAYNAKLARI POLİTİKASI</h2>
+    <p>İnsan kaynaklarının misyonu; yaratıcı, dinamik, bilgili, motivasyonu yüksek, etkin ve verimli bir Şirket ekibinin sürekliliğini sağlamak için tüm Şirket yönetimine ve çalışanlarına destek vermek ve ilgili birimlerle koordineli olarak insan kaynakları sistemlerini kurmaktır. 
+      Şirket, çalışanlarına her türlü kariyer gelişimi imkânını tanımaktadır. 
+      Tüm çalışanlara; kariyer ve kişisel gelişim ihtiyaçlarına, zaman içinde oluşan gereksinimlerine ve Şirket’in hedef ve stratejilerine paralel olarak farklı eğitim olanakları sağlanmaktadır. 
+      Bu doğrultuda kişilerin çalıştıkları birimlerdeki rollerinde donanımlı olmaları için gerekli tüm teknik, mesleki bilgi ve kişisel becerilerini geliştirmek amacıyla eğitimler sunulmaktadır.</p>
+
+      <p>Şirket, erişmek istediği yüksek hedeflere en kaliteli insan gücüne sahip olarak ulaşacağının bilinci ile iyi eğitimli, yetenekli ve başarılı kişilerin istihdamına öncelik vermektedir.
+         İstihdamda sadece o anda açık bulunan kadro ihtiyacının giderilmesi değil, uzun vadeli Şirket hedefleri de değerlendirilmektedir.</p>
+         <p>Kural olarak, personel ihtiyacı öncelikle Şirket’in mevcut personel kaynağından karşılanmaktadır.
+           Kaynaklardan terfi, nakil yoluyla karşılanmayan personel açığını doldurmak üzere yeni personel alımı için Şirket dışı kaynaklara başvurulmaktadır.
+           Şirket’in personel alımı ölçütlerini içeren İnsan Kaynakları Politikası yatırımcı ilişkileri web sayfasında (www.aksainvestorrelations.com)  
+          “Kurumsal Yönetim” altında kamuoyuna sunulmuştur. Kilit yönetici pozisyonları için halefiyet planı geliştirilmesinde Yönetim Kurulu aktif rol almaktadır.</p>
+      <p>Çalışanlara sağlanan tüm haklarda adil davranılması ilkesi Şirket tarafından kabul edilmekte ve uygulanmaktadır.
+         Çalışanlarla ilgili olarak alınan kararlar veya çalışanları ilgilendiren gelişmeler, departman müdürleri aracılığıyla ve e-posta yoluyla çalışanlar ile paylaşılmaktadır.</p>
+      <p>Şirket çalışanlarının görev tanımları, ISO 9001 Kalite Yönetim Sistemi çerçevesinde yazılı kurallara bağlanarak çalışanlara duyurulmuştur.
+         Çalışanlara verilen ücret ve diğer menfaatlerin belirlenmesinde performans ve verimlilik esas alınmaktadır. 
+        Şirket’in, çalışanlarına yönelik olarak hisse senedi edindirme planları bulunmamaktadır.</p>
+      <p>Çalışanlar ile ilişkileri yürütmek için ayrı bir temsilci atanmamıştır. 
+        Şirket’te çalışanlarla ilişkiler, İnsan Kaynakları Departmanı ve bu Departman bünyesinde özelleştirilmiş sorumluluklarıyla İnsan Kaynakları profesyonelleri tarafından yönetilmektedir.
+         Aynı zamanda, çalışanların yönetime ilişkin herhangi bir sorun yaşadığında İnsan Kaynakları Departmanı’na başvurması kararlaştırılmış ve çalışanlara iletişimi yapılmıştır. Şirket, çalışanlar arasında ırk, din, dil ve cinsiyet ayrımı yapılmaması ve çalışanların Şirket içi fiziksel, ruhsal ve duygusal kötü muamelelere karşı korunması amacıyla her türlü önlemi almakta ve Etik İlkeleri uygulamaktadır. 
+        Gerek daha önce gerek 2021 yılı içinde çalışanlardan ırk, din, dil veya cinsiyet ayrımı konusunda herhangi bir şikâyet gelmemiştir.</p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+    });
+    overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

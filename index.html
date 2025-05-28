@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ana Sayfa - Aksa Enerji</title>
+
+
+
+
+
+    
+    <style>
+      .global-title {
+  font-size: 4rem; /* Aşırı büyük */
+  color: #003366;
+  text-align: center; /* Ortaya hizalar */
+  margin-bottom: 40px; /* Alttaki yazıyla araya boşluk */
+  transition: color 0.3s ease;
+}
+
+
+
+      h2 {
+  transition: color 0.3s ease;
+}
+h2:hover {
+  color: #00aa00;
+}
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px; /* Tüm yazıları büyütür */
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #242424;
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto; /* Sayfayı kaydırılabilir yapar */
+}
+
+
+
+.top-bar {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar .logo img {
+  height: 42px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #00336600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #292929;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.side-menu a:hover {
+  background-color: #003366;
+}
+
+.side-menu a i {
+  margin-right: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.content {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  background: rgb(255, 255, 255);
+ 
+}
+
+.section-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.section-left .section-text {
+  text-align: left;
+}
+.section-right .section-text {
+  text-align: right;
+}
+
+.section-text h2 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.section-text p {
+  font-size: 18px; /* Paragrafları da büyütelim */
+  color: #333;
+}
+
+.global-title {
+  position: relative;
+  font-size: 4rem;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
+/* Arka plan olarak dünya haritasını ekler */
+.global-title::before {
+  content: "";
+  background-image: url('https://www.pngegg.com/pngfull/ccqjo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .global-title {
+    font-size: 2.5rem;
+    padding: 0 10px;
+  }
+
+  .section-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-text {
+    text-align: left !important;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .content {
+    padding: 20px 10px;
+  }
+
+  footer div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer div > div {
+    width: 100%;
+  }
+
+  .side-menu {
+    width: 200px;
+  }
+
+  .side-menu a {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}
+
+.text-slider {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  position: relative;
+  height: 40px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  color: #1c1c1c;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.dots {
+  margin-top: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #007bff;
+}
+.text-slider {
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px; /* Top-bar'dan biraz boşluk */
+}
+
+</style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> MENÜ</div>
+    <div class="logo"><img src="https://aksaenerjicdn.mncdn.com/assets/images/aksa-enerji-logo.jpg" alt="Aksa Enerji"></div>
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="side-menu" id="sideMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+    <a href="hakkimizda.html"><i class="fas fa-circle-info"></i> Hakkımızda</a>
+    <a href="tedarikciler.html"><i class="fas fa-people-carry-box"></i> Tedarikçiler</a>
+    <a href="enerji-santralleri.html"><i class="fas fa-bolt"></i> Enerji Santralleri</a>
+    <a href="surdurulebilirlik.html"><i class="fas fa-leaf"></i> Sürdürülebilirlik</a>
+    <a href="yatirimci-iliskileri.html"><i class="fas fa-handshake"></i> Yatırımcı İlişkileri</a>
+    <a href="haberler.html"><i class="fas fa-newspaper"></i> Haberler</a>
+    <a href="insan-kaynaklari.html"><i class="fas fa-user"></i> İnsan Kaynakları</a>
+    <a href="iletisim.html"><i class="fas fa-envelope"></i> İletişim</a>
+</div>
+
+<div class="content">
+    <!-- ... side-menu bitişi -->
+<div class="text-slider">
+  <div class="slides">
+    <div class="slide active">Sınırları aşan güç</div>
+    <div class="slide">Aksa Enerji 7 ülkede enerji üretimiyle global bir enerji şirketidir.</div>
+    <div class="slide">Yüksek verimlilikle çalışıyor, sürdürülebilir enerjiyi önceliyor.</div>
+    <div class="slide">Afrika’dan Asya’ya uzanan güçlü enerji yatırımlarıyla büyüyor.</div>
+  </div>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="section-group section-left">
+  <div class="section-text">
+    <h2 class="global-title">Global Operasyonlar</h2>
+
+    <p>GLOBAL OPERASYONLAR
+7 ülkede santral yatırımlarıyla global bir enerji şirketi olan Aksa Enerji, globalleşme yolundaki ilk adımını 2015 yılında atmıştır. Verimlilik ve sürdürülebilirlik odaklı yaklaşımını Türkiye ve KKTC’den sonra yurt dışına taşımak için harekete geçen Aksa Enerji’nin ilk hedefi Afrika olmuş; Gana,
+Madagaskar ve Mali’de kısa sürede kurup devreye aldığı enerji santralleriyle Afrika kıtasına açılmıştır.
+
+ 
+
+Afrika kıtasındaki başarılı yatırım projelerinin ardından, Asya kıtasındaki ilk yatırımına Özbekistan’da adım atan Aksa Enerji, Taşkent ve Buhara’da toplam 740 MW kurulu güce sahip olacak doğal gaz kombine çevrim santralleriyle portföyünü coğrafi olarak çeşitlendirmeye devam etmektedir. Aksa Enerji, 2021 yılının başında Kongo Cumhuriyeti’nde 50 MW kurulu güce sahip olacak doğal gaz santralinin işletme hakkına yönelik 30 yıllık imtiyaz sözleşmesi imzalamıştır.
+
+Aksa Enerji, coğrafi çeşitlilik stratejisiyle yurt dışında enerji ihtiyacı olan tüm coğrafyalarda yatırımlarına devam etmektedir..</p>
+  </div>
+</div>
+
+<div class="section-group section-right">
+  <div class="section-text">
+    <h2>Enerji Santralleri</h2>
+    <p>Antalya, Bolu, Özbekistan gibi birçok lokasyonda kurulu santrallerimiz ile yüksek verimlilikle enerji üretimi sağlıyoruz.</p>
+  </div>
+</div>
+
+<div class="section-group section-left">
+  <div class="section-text">
+    <h2>Sürdürülebilirlik</h2>
+    <p>Aksa Enerji olarak insana ve doğaya karşı sorumluluğumuzun bilincindeyiz. Özellikle santral kurduğumuz bölgelerdeki toplumsal ve ekolojik yaşama katkı sağlayarak, sektörde örnek olacak uygulamalara imza atıyoruz.
+
+Operasyonlarımızı paydaşlarımız üzerindeki sosyal etkileri dikkate alarak yürütüyor, faaliyet gösterdiğimiz bölgelerde yerel halkın ekonomik, kültürel ve toplumsal gelişimine katkıda bulunmayı öncelikli hedefimiz olarak görüyoruz.</p>
+  </div>
+</div>
+
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+    });
+    overlay.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    });
+});
+</script>
+<footer style="background-color: #1c1c1c; color: white; padding: 40px 20px;">
+  <div style="max-width: 1100px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+    <div>
+      <img src="https://aksaenerjicdn.mncdn.com/assets/images/aksa-enerji-logo.jpg" alt="Aksa Enerji" style="height: 50px; margin-bottom: 20px;">
+      <p>Genel Müdürlük</p>
+      <p>Bize Yazın</p>
+      <p>Bilgi Toplumu Hizmetleri</p>
+    </div>
+    <div>
+      <p style="font-weight: bold; color: #ffcc00;">Bizi Takip Edin</p>
+      <a href="#" style="color: white; margin-right: 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="#" style="color: white;"><i class="fab fa-youtube fa-lg"></i></a>
+      <p style="margin-top: 20px;"><strong>Aksa Enerji.</strong> Tüm Hakları Saklıdır.</p>
+      <p>Kullanım Koşulları ve Gizlilik</p>
+      <p>Kişisel Verilerin Korunması</p>
+      <p>Bilgi Güvenliği</p>
+    </div>
+  </div>
+</footer>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    dots[i].classList.remove('active');
+  });
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 3000); // 3 saniyede bir değiş
+</script>
+
+</body>
+</html>
